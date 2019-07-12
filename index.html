@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYT API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/d376955e9a.js"></script>
+</head>
+<body>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <div class="jumbotron text-center">
+            <h1 class="display-5"><i class="far fa-newspaper"></i> New York Times Search</h1>
+          </div>
+
+          <div class="search-container">
+            <div class="card">
+              <div class="font-weight-bold card-header">
+                <i class="fas fa-stream"></i> Search Parameters
+              </div>
+              <div class="card-body">
+
+                <form>
+                  <div class="form-group">
+                    <label for="search-term">Search Term</label>
+                    <input type="text" class="form-control" id="search-term" aria-describedby="searchTerm" required>
+                    <small id="search-help" class="form-text text-muted" style="display: none;">Please enter a search term</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="number-articles">Number of Records to Retrieve (1 - 10)</label>
+                    <input type="number" class="form-control" id="number-articles" value="5" min="1" max="10">
+                  </div>
+                  <div class="form-group">
+                    <label for="pub-year">Published Year (Optional)</label>
+                    <input type="text" class="form-control" id="pub-year">
+                  </div>
+                  <button id="js-btn-search" style="width: 49%;" type="submit" class="btn btn-secondary"><i class="fas fa-search"></i> Search</button>
+                  <button id="js-btn-clear" style="width: 49%; float: right;" class="btn btn-secondary"><i class="fas fa-times"></i> Clear</button>
+                </form>
+
+                  
+              </div>
+            </div>
+          </div>
+
+          <div class="results-container my-4">
+            <div class="card">
+              <div class="font-weight-bold card-header">
+                  <i class="fas fa-th"></i> Top Articles
+              </div>
+              <div id="js-results-body" class="card-body">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p class="text-center">Footer</p>
+      </div>
+    </footer>
+
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
