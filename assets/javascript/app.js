@@ -6,8 +6,13 @@ function updateDOM() {
     console.log(resultAmount)
     var pubYear = $("#pub-year").val();
     console.log(pubYear)
+    var pubClause = '&fq=pub_year:' + pubYear
+    if (pubYear === '') {
+        pubClause = ''
+    }
+    
     var searchTerm = $("#search-term").val().trim();
-    var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + searchTerm + '&fq=pub_year:' + pubYear + '&api-key=' + API_KEY
+    var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + searchTerm + pubClause + '&api-key=' + API_KEY
     console.log(queryURL)
     console.log(searchTerm)
 
